@@ -1,26 +1,149 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: #d6e2f5;
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsl(200, 60%, 99%);
+  --red-700: hsl(3, 77%, 44%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-400: hsl(3, 86%, 64%);
+ 
+  --extension-shadow:
+      0 2px 2px 0 hsla(217, 34%, 82%, 0.2),
+      0 1px 5px 1px hsla(217, 34%, 82%, 0.22);
+  --header-boxshadow: 0 2px 3px 0 hsl(213, 55%, 90%);
+
+  --gradient-deg: 180deg;
+  --gradient-one: hsl(215, 74%, 95%);
+  --gradient-two: hsl(171, 62%, 96%);
+  --foreground: var(--neutral-900);
+  --secondary: var(--neutral-0);
+  --secondary-border: var(--neutral-200);
+  --extension-body: var(--neutral-600);
+  --theme-toggle: var(--neutral-100);
+
+  --filter-bg: var(--neutral-0);
+  --filter-focus: var(--neutral-0);
+  --filter-hover: var(--neutral-0);
+  --filter-border: var(--neutral-200);
+  --filter-hover-border: var(--neutral-200);
+  --filter-text: var(--neutral-900);
+  --filter-outline: var(--red-400);
+  --filter-shadow: 0 1px 2px 0 hsla(217, 28%, 78%, 0.4);
+
+  --cubic-animation: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --toggle-box: var(--neutral-300);
+  --toggle-disabled-box: var(--neutral-100);
+  --toggle: var(--neutral-0);
+  --toggle-shadow: 0 1px 3px 0 hsla(218, 29%, 5%, 0.15), 0 1px 2px -1 hsla(218, 29%, 5%, 0.15);
+  --toggle-outline: var(--red-400);
+  --toggle-box-checked: var(--red-700);
+  --toggle-box-checked-hover: var(--red-500);
+  --toggle-box-checked-focus: var(--red-700);
+
+  --theme: var(--neutral-100);
+  --theme-hover: var(--neutral-300);
+  --theme-focus: var(--neutral-100);
+  --theme-outline: var(--red-400);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.active {
+  --filter-bg: var(--red-700);
+  --filter-hover: var(--red-500);
+  --filter-focus: var(--red-700);
+  --filter-border: var(--red-700);
+  --filter-hover-border: var(--red-500);
+  --filter-text: var(--neutral-0);
+  --filter-outline: var(--red-400);
+  --filter-shadow: 0 1px 2px 0 hsla(217, 28%, 78%, 0.4);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.dark {
+  --gradient-one: #04091b;
+  --gradient-two: #091540;
+  --foreground: var(--neutral-0);
+  --secondary: var(--neutral-800);
+  --secondary-border: var(--neutral-800);
+
+  --header-boxshadow: 0 0 0 0 transparent;
+
+  --filter-bg: var(--neutral-700);
+  --filter-hover: var(--neutral-600);
+  --filter-focus: var(--neutral-700);
+  --filter-border: var(--neutral-600);
+  --filter-hover-border: var(--neutral-600);
+  --filter-focus-border: var(--red-400);
+  --filter-shadow: 0 0 0 0 transparent;
+  --filter-text: var(--neutral-0);
+
+  --theme: var(--neutral-700);
+  --theme-hover: var(--neutral-600);
+  --theme-focus: var(--neutral-700);
+  
+  .active {
+    --filter-bg: var(--red-400);
+    --filter-border: var(--red-400);
+    --filter-text: var(--color-neutral-900);
+    --filter-shadow: none;
+    --filter-hover: var(--red-500);
+    --filter-hover-border: var(--red-500);
+    --filter-focus: var(--red-400);
+    --filter-outline: var(--red-400)
   }
 }
 
+@theme inline {
+  --breakpoint-lg: 60rem;
+  --font-sans: var(--font-noto-sans), sans-serif;
+
+  --shadow-header: var(--header-boxshadow);
+  --shadow-extension: var(--extension-shadow);
+  --shadow-filter: var(--filter-shadow);
+  --shadow-none: 0 0 0 0 transparent;
+
+  --radius-2.5: 0.625rem;
+  --radius-5: 1.25rem;
+
+  --tracking-tigher: -0.3px;
+
+  --ease-cubic: var(--cubic-animation);
+
+  --color-foreground: var(--foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-border: var(--secondary-border);
+  --color-theme-toggle: var(--theme-toggle);
+  --color-extension-body: var(--extension-body);
+
+  --color-filter: var(--filter-bg);
+  --color-filter-border: var(--filter-border);
+  --color-filter-hover-border: var(--filter-hover-border);
+  --color-filter-focus-border: var(--filter-hover-border);
+  --color-filter-outline: var(--filter-outline);
+  --color-filter-text: var(--filter-text);
+  --color-filter-hover: var(--filter-hover);
+  --color-toggle-box: var(--toggle-box);
+  --color-toggle-box-checked: var(--toggle-box-checked);
+  --color-toggle-box-checked-hover: var(--toggle-box-checked-hover);
+  --color-toggle-box-checked-focus: var(--toggle-box-checked-focus);
+  --color-toggle-disabled-box: var(--toggle-disabled-box);
+  --color-toggle: var(--toggle);
+  --shadow-toggle-shadow: var(--toggle-shadow);
+  --color-toggle-outline: var(--toggle-outline);
+
+  --color-theme: var(--theme);
+  --color-theme-hover: var(--theme-hover);
+  --color-theme-focus: var(--theme-focus);
+  --color-theme-outline: var(--theme-outline);
+}
+
+
 body {
-  background: var(--background);
+  background: linear-gradient(var(--gradient-deg), var(--gradient-one) 0%, var(--gradient-two) 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
