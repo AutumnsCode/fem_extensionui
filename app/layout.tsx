@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${notoSans.variable} h-full antialiased dark`}
+      className={`${notoSans.variable} h-full antialiased`}
     >
       <body className="px-4 sm:px-8 min-h-full flex flex-col">{children}</body>
     </html>
