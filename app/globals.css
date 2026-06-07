@@ -100,6 +100,7 @@
 @theme inline {
   --breakpoint-lg: 60rem;
   --font-sans: var(--font-noto-sans), sans-serif;
+  --text-4xl: 34px;
 
   --shadow-header: var(--header-boxshadow);
   --shadow-extension: var(--extension-shadow);

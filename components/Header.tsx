@@ -13,8 +13,8 @@ export const Header = () => {
       <picture>
         {
           isDark
-            ? <Image src={LogoDark.src} width={179} height={41} className={isDark ? "block" : "hidden"} alt="" loading="eager" />
-            : <Image src={LogoLight.src} width={179} height={41} className={isDark ? "hidden" : "block"} alt="" loading="eager"/>
+            ? <Image src={LogoDark.src} width={179} height={41} className={isDark ? "block" : "hidden"} alt="" loading="eager" suppressHydrationWarning/>
+            : <Image src={LogoLight.src} width={179} height={41} className={isDark ? "hidden" : "block"} alt="" loading="eager" suppressHydrationWarning/>
         }
       </picture>
 
