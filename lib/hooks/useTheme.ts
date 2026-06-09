@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 
 export function useTheme() {
-  const [isDark, setIsDark] = useState<boolean>(() => {
-    // SSR: window existiert nicht
-    if (typeof window === "undefined") return false;
+  const [isDark, setIsDark] = useState<boolean>(false);
 
+  useEffect(() => {
     const saved = localStorage.getItem("theme");
-    if (saved === "dark") return true;
-    if (saved === "light") return false;
-
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
-  });
+    if (saved === "dark") setIsDark(true);
+    else if (saved === "light") setIsDark(false);
+    else setIsDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
+  }, []);
 
   // System-Theme Listener (externes Event → erlaubt)
   useEffect(() => {
@@ -29,4 +27,3 @@ export function useTheme() {
 
   return { isDark, setIsDark };
 }
-

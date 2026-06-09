@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import {Noto_Sans} from "next/font/google"
+import Provider from "./provider";
 
 export const notoSans = Noto_Sans({
   subsets: ["latin"],
@@ -23,9 +24,11 @@ export default function RootLayout({
     <html
       suppressHydrationWarning
       lang="en"
-      className={`${notoSans.variable} h-full antialiased`}
+      className={`${notoSans.variable} min-h-svh antialiased`}
     >
-      <body className="px-4 sm:px-8 min-h-full flex flex-col">{children}</body>
+      <body className="px-4 sm:px-8 min-h-full flex flex-col">
+        <Provider>{children}</Provider>
+      </body>
     </html>
   );
 }

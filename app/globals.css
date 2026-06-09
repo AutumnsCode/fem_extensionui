@@ -24,7 +24,6 @@
   --foreground: var(--neutral-900);
   --secondary: var(--neutral-0);
   --secondary-border: var(--neutral-200);
-  --extension-body: var(--neutral-600);
   --theme-toggle: var(--neutral-100);
 
   --filter-bg: var(--neutral-0);
@@ -50,6 +49,17 @@
   --theme-hover: var(--neutral-300);
   --theme-focus: var(--neutral-100);
   --theme-outline: var(--red-400);
+
+  --ext-border: var(--neutral-200);
+  --ext-body: var(--neutral-600);
+
+  --remove: var(--neutral-0);
+  --remove-hover: var(--red-700);
+  --remove-focus: var(--neutral-100);
+  --remove-border: var(--neutral-300);
+  --remove-hover-border: var(--red-700);
+  --remove-outline: var(--red-700);
+  --remove-body: var(--neutral-0);
 }
 
 .active {
@@ -84,6 +94,17 @@
   --theme: var(--neutral-700);
   --theme-hover: var(--neutral-600);
   --theme-focus: var(--neutral-700);
+
+  --ext-border: var(--neutral-200);
+  --ext-body: var(--neutral-300);
+
+  --remove: var(--neutral-800);
+  --remove-hover: var(--red-400);
+  --remove-focus: var(--neutral-600);
+  --remove-border: var(--neutral-300);
+  --remove-hover-border: var(--red-400);
+  --remove-outline: var(--red-400);
+  --remove-body: var(--neutral-900);
   
   .active {
     --filter-bg: var(--red-400);
@@ -111,6 +132,7 @@
   --radius-5: 1.25rem;
 
   --tracking-tigher: -0.3px;
+  --tracking-tight: -0.2px;
 
   --ease-cubic: var(--cubic-animation);
 
@@ -118,7 +140,6 @@
   --color-secondary: var(--secondary);
   --color-secondary-border: var(--secondary-border);
   --color-theme-toggle: var(--theme-toggle);
-  --color-extension-body: var(--extension-body);
 
   --color-filter: var(--filter-bg);
   --color-filter-border: var(--filter-border);
@@ -140,6 +161,16 @@
   --color-theme-hover: var(--theme-hover);
   --color-theme-focus: var(--theme-focus);
   --color-theme-outline: var(--theme-outline);
+
+  --color-ext-border: var(--ext-border);
+  --color-ext-body: var(--ext-body);
+
+  --color-remove: var(--remove);
+  --color-remove-hover: var(--remove-hover);
+  --color-remove-focus: var(--remove-focus);
+  --color-remove-hover-border: var(--remove-hover-border);
+  --color-remove-outline: var(--remove-outline);
+  --color-remove-body: var(--remove-body);
 }
 
 
